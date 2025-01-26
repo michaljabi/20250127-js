@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Component and callbacks</title>
+    <style>
+        :root {
+            display: flex;
+            justify-content: center;
+        }
+
+        button[data-counter] {
+            padding: 20px;
+            font-size: 24px;
+            margin: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script>
+         const root = document.querySelector('#root');
+
+         function Box() {
+             let counter = 0;
+             const div = document.createElement('div');
+
+             // We can actually refactor code below to use same reference to function onClick
+             // #BONUS TASK - do you know how to do achieve it?
+             // 1. you should have only one logic onClick delivered to both buttons
+
+             const btn1 =  CounterBtn({
+                     counter: counter,
+                     onClick: () => { // callback
+                         counter += 3
+                         btn2.innerText = counter;
+                         btn1.innerText = counter;
+                     }
+                 })
+             const btn2 =  CounterBtn({
+                 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#property_definitions
+                 counter, // you can use object property shorthand here | check: https://www.javascripttutorial.net/object-literal-extensions/
+                 onClick: () => { // callback
+                     counter += 3
+                     btn2.innerText = counter;
+                     btn1.innerText = counter;
+                 }
+             })
+
+             div.append(btn1, btn2)
+             return div;
+         }
+
+         function CounterBtn({counter, onClick}) {
+             const btn = document.createElement('button');
+             btn.innerText = counter;
+             btn.dataset.counter = ''; // this will allow button[data-counter] CSS selector to be applied
+
+             // fire callback on click
+             btn.addEventListener('click', onClick);
+             return btn;
+         }
+
+         // #TASK 2:
+         // Can you make Boxes to start with different counter values?
+         // You should see 2 buttons with other values then other two
+         root.append(
+             Box(),
+             Box()
+         )
+    </script>
+</body>
+</html>

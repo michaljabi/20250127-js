@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>h02 Session Storage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<main class="container mt-5">
+    <h1>Using local storage - [F5]</h1>
+    <div class="jumbotron">
+        <h4>My text that will always disappear (when hit F5): <small id="text-vanish"></small></h4>
+        <input id="vanish-input" class="form-control">
+    </div>
+    <div class="jumbotron">
+        <h4>My text that will always stay (when hit F5): <small id="text-saved"></small></h4>
+        <input id="saved-input" class="form-control">
+    </div>
+</main>
+<script>
+    /**
+    *  sessionStorage is special Browser WebAPI that allows you to "save some data"
+     *  despite Browser refresh
+     *
+     *  Normally when you refresh the website, JavaScript objects and values will be erased from memory
+     *  and JS code will re-run.
+     *
+     * That is why in example below $inputVanish field will always lose text after you refresh
+     * To prevent that behavior you can use sessionStore API - to save some data value inside "`key - value` like Database"
+     * You can only save data there as strings -> so for Objects you might want to stringify them with JSON for saving.
+     *
+     * Data present in Session Storage will be available during a "session" which means - until User closes Browser tab.
+     *
+     * When you type in something to $inputSaved - and hit refresh it will be preserved.
+     *
+     * Each website (domain to be exact) - opened in browser - will heave its own sessionsStorage avaliable.
+     * You cannot access sessionStorage of the other website.
+     *
+     * https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
+    * */
+    const $vanishText = document.querySelector('#text-vanish');
+    const $inputVanish = document.querySelector('#vanish-input');
+
+    const $savedText = document.querySelector('#text-saved');
+    const $inputSaved = document.querySelector('#saved-input');
+
+    $inputVanish.addEventListener('input', (ev) => {
+        const text = ev.target.value;
+        $vanishText.textContent = text;
+    })
+
+    $inputSaved.addEventListener('input', (ev) => {
+        const text = ev.target.value;
+        $savedText.textContent = text;
+
+        // sessionStorage WRITE:
+        sessionStorage.setItem('myText', text);
+    })
+
+    // sessionStorage READ:
+    $savedText.innerText = sessionStorage.getItem('myText');
+    $inputSaved.value = sessionStorage.getItem('myText');
+</script>
+</body>
+</html>

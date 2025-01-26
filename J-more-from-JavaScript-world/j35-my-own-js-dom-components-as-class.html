@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .blue-text {
+            color: #599aff;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+
+    <script>
+        // https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements
+        class MySampleDiv extends HTMLDivElement {
+
+            constructor(textContent = 'Hello World') {
+                super();
+                this.textContent = textContent;
+                this.className = 'blue-text';
+            }
+        }
+
+        // Register my own class component based on <div></div> (HTMLDivElement)
+        customElements.define("my-sample-div", MySampleDiv, { extends: "div" });
+    </script>
+    <script>
+        const $container = document.querySelector('.container');
+
+        $container.append(
+			new MySampleDiv(),
+            new MySampleDiv('Other World'),
+            new MySampleDiv('This is JS....')
+        );
+    </script>
+</body>
+</html>

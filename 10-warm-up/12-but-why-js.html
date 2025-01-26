@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>But... why JS?</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.3/css/bulma.min.css">
+</head>
+
+<body>
+    <hero class="hero is-link">
+        <div class="hero-body">
+            <p class="title">
+                Fruit app
+            </p>
+            <p class="subtitle">
+                Simple working example... just to show you basic capabilities of JavaScript Apps
+            </p>
+        </div>
+    </hero>
+    <main class="container pt-6">
+        <nav class="panel is-primary">
+            <p class="panel-heading">
+                Fruit list
+            </p>
+            <a class="panel-block p-4 is-size-4">apple</a>
+            <label class="panel-block" data-insert-panel>
+                <input data-fruit class="input is-primary" type="text"
+                    placeholder="Add new fruit name, type text + [Enter]">
+            </label>
+        </nav>
+    </main>
+    <script>
+        /*
+        * I am not expecting from you to understand any of that code,
+        * the aim here is simple, to show you WHY,
+        * and to show you that, you can code cool apps with just JS.
+        *
+        * You will learn a bunch of "spelling and grammar" of the JavaScript language on this training.
+        *
+        * You need to understand WHY.
+        *
+        * You need to see that those base "spelling and grammar" rules (syntax rules, and element usage)
+        * - ARE ESSENTIAL to understand code below.
+        *
+        * Please came back to this example after the training - to see how many of the things do you understand then.
+        *
+        *
+        * Do not hesitate to "hack" this example your way 😆
+        * */
+        const insertPanel = document.querySelector('[data-insert-panel]');
+        const fruitInput = document.querySelector('[data-fruit]');
+
+        fruitInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                addFruitToList(fruitInput.value);
+            }
+        })
+
+        function addFruitToList(name) {
+            if (!name.trim()) {
+                return;
+            }
+            const panelBlockA = makePanelBlockAnchor(name);
+            insertPanel.before(panelBlockA);
+            fruitInput.value = '';
+        }
+
+        function makePanelBlockAnchor(text = '') {
+            const anchor = document.createElement('a');
+            anchor.className = 'panel-block p-4 is-size-4';
+            anchor.textContent = text;
+            return anchor;
+        }
+    </script>
+</body>
+
+</html>

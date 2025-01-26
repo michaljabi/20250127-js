@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>h01 BOM -> Browser Object Model</title>
+</head>
+<body>
+
+    <script>
+        // Global object in the Browser is the window:
+        console.log(window);
+
+        // To confirm that we can check globalThis:
+        console.log(globalThis)
+
+        // and compare those 2 references:
+        console.log(globalThis === window);
+
+        // Now we now that those things references same object in memory.
+
+        // Web APIs allows us to do some cool staff connected with the Browser
+        // For instance. You can access User language set inside the Browser:
+        console.log(window.navigator.language);
+
+        // Check the other WebAPIs:
+        // https://developer.mozilla.org/en-US/docs/Web/API
+
+        // Because window is a global object you can short it dow to:
+        console.log(navigator.language)
+
+        // All objects with WebAPI will be accessed directly.
+        // You can uncomment this, to check it out:
+
+        // alert('Hello from ALERT!');
+    </script>
+</body>
+</html>

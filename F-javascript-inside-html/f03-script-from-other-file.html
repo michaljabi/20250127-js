@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>f03 Order confirmation</title>
+</head>
+<body>
+  <main>
+      <p>
+          You placed an order: <strong>2024/06/10</strong>
+      </p>
+      <button onclick="handleConfirm()"> Confirm </button>
+  </main>
+  <!-- script below is inside other file -->
+  <script src="./f03-script-from-other-file.js"></script>
+
+  <script>
+      // you can have more than one script on the website.
+      // IF the scripts aren't --> type="module" (!) They will share same scope !!!
+
+      // for example, I can access a const:
+      console.log(testMe);
+
+      // However - this is not a "good feature" when comes to write complex JavaScript code.
+      // This is because, we might not know about existence of some identifiers, and make errors like this:
+
+      // If you uncomment line below it will cause an error (!)
+      // const testMe = 'Hello !'
+      // SyntaxError: Identifier 'testMe' has already been declared
+
+      /**
+            #TASK f03:
+            1. make sure line 28 is commented out (no errors on website)
+            2. implement event that will fire on mouse over for <strong>2024/06/10</strong>
+            3. it should alert() about the order name (2024/06/10)
+
+            helpful links:
+            https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event
+            https://developer.mozilla.org/en-US/docs/Web/API/Window/alert
+       */
+  </script>
+</body>
+</html>

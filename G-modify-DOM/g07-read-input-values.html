@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Component and callbacks</title>
+    <style>
+        :root {
+            display: flex;
+            justify-content: center;
+        }
+
+        button[data-counter] {
+            padding: 20px;
+            font-size: 24px;
+            margin: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <label>
+            Name:
+            <input type="text" name="myName">
+        </label>
+        <label>
+            Age:
+            <input type="number" name="age">
+        </label>
+        <div>
+            <ul>
+                <li>You typed name: <span data-value="myName"></span></li>
+                <li>You typed age: <span data-value="age"></span></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const myNameInput = document.querySelector('input[name="myName"]');
+        const myNameOutput = document.querySelector('span[data-value="myName"]');
+
+        myNameInput.addEventListener('input', (event) => {
+            console.log(event.target.value)
+            myNameOutput.innerText = event.target.value;
+            // same as:
+            // myNameOutput.innerText = myNameInput.value;
+        })
+
+        const ageInput = document.querySelector('input[name="age"]');
+        const ageOutput = document.querySelector('span[data-value="age"]');
+
+        ageInput.addEventListener('input', (event) => {
+            console.log(event.target.value, typeof event.target.value)
+            console.log(event.target.valueAsNumber, typeof event.target.valueAsNumber)
+            ageOutput.innerText = event.target.value;
+            // same as:
+            // ageOutput.innerText = ageInput.value;
+        })
+    </script>
+</body>
+</html>

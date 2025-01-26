@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>f05 Ecma Script Modules</title>
+</head>
+<body>
+  <main>
+      <h1></h1>
+      <h2></h2>
+  </main>
+  <!-- script below is from different server so-called CDN (Content Delivery Network) -->
+  <script src="https://cdn.jsdelivr.net/npm/umbrellajs"></script>
+
+  <script type="module">
+      /*
+      * This is an ESM -> Ecma Script Module.
+      * It can access to other <script> scope, but other modules and <script> CANNOT access his scope.
+      *
+      * This scope is hermetic, unless I will export something to the outside explicitly!!!
+      * */
+
+      const helloFromModule = 'Hello !'
+
+      // from module we can still access things defined elsewhere (not in modules):
+      // for example umbrella still works here:
+
+      u('h1').html(`<span style="color: darkred">Hello from Umbrella again</span>`)
+  </script>
+  <script>
+      // This will rise an exception:
+      console.log(helloFromModule)
+      // ReferenceError: helloFromModule is not defined
+
+      // helloFromModule is not accessible here, because of `type="module"` being set above.
+  </script>
+
+    <!-- BUT, better approach to program is when you have lib, written in ESM -->
+   <script type="module">
+
+       // Module uses special syntax `import` to actually see what do we use from other module:
+       import umb from 'https://cdn.jsdelivr.net/npm/umbrellajs@3.3.3/umbrella.esm.js'
+
+       // This is cool - because now we see from where the "umb" identifier is coming from.
+       // Moreover - we defined `umb` name for our own.
+       // So we are not dependent on creator of the library with the variable from global scope
+
+       umb('h2').html(`<span style="color: darkgreen">Hello from ESM Umbrella</span>`)
+   </script>
+</body>
+</html>

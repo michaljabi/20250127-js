@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>h03 Local Storage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<main class="container mt-5">
+    <h1>Using local storage - [F5]</h1>
+    <div class="jumbotron">
+        <h4>My text that will always disappear (when hit F5): <small id="text-vanish"></small></h4>
+        <input id="vanish-input" class="form-control">
+    </div>
+    <div class="jumbotron">
+        <h4>My text that will always stay (when hit F5): <small id="text-saved"></small></h4>
+        <input id="saved-input" class="form-control">
+    </div>
+</main>
+<script>
+    /**
+     *  localStorage works similar to sessionStore, except it has no expiration time.
+     *
+     *  You can see both sessionStorage / localStorage values holden in Browser Dev Tools.
+     *
+     *  User cannot clear the localStorage even using Ctrl+F5 key combination.
+     *  It can happen only if somebody clear whole website cache
+     *
+     * https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+     * */
+    const $vanishText = document.querySelector('#text-vanish');
+    const $inputVanish = document.querySelector('#vanish-input');
+
+    const $savedText = document.querySelector('#text-saved');
+    const $inputSaved = document.querySelector('#saved-input');
+
+    $inputVanish.addEventListener('input', (ev) => {
+        $vanishText.textContent = ev.target.value;
+    })
+
+    $inputSaved.addEventListener('input', (ev) => {
+        const text = ev.target.value;
+        $savedText.textContent = text;
+        localStorage.setItem('myText', text);
+    })
+
+    // Read and save values from localStorage:
+    $savedText.innerText = localStorage.getItem('myText');
+    $inputSaved.value = localStorage.getItem('myText');
+</script>
+</body>
+</html>

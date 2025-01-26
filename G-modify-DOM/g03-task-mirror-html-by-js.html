@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>g02 sample code in JS and HTML</title>
+    <style>
+        .hello-wrapper {
+            margin-top: 100px;
+            text-align: center;
+        }
+        .box {
+            padding: 15px;
+            border: 3px solid darkred;
+            margin: 20px auto;
+            width: 50vw;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+    <div class="hello-wrapper">
+        <h2>Hello World</h2>
+        <p class="box">
+            Welcome to my example
+        </p>
+    </div>
+</div>
+<script>
+    /**
+     * #TASK g03:
+     * How to show the same wrapper on the screen using only JavaScript (Vanilla)?
+     * Placed under the current div.helloWrapper
+     *
+     * Helpers:
+     * https://developer.mozilla.org/en-US/docs/Web/API
+     * https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/How_to_create_a_DOM_tree
+     *
+     * https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector
+     * https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+     * https://developer.mozilla.org/en-US/docs/Web/API/Element/append
+     * https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
+     *
+     * https://developer.mozilla.org/en-US/docs/Web/API/Element/className
+     * https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText
+     *
+     */
+
+     // Type your solution below, and append it to root element:
+     const root = document.querySelector('#root');
+
+     root.append('change me')
+</script>
+</body>
+</html>

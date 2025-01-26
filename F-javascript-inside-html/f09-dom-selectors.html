@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red-text {
+            color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Hello world</h1>
+    <div class="description">
+        is that really you?...
+    </div>
+
+    <script>
+        // Every single element in DOM tree can be represented as JS object:
+        const h1 = document.getElementById('heading');
+        const desc = document.querySelector('.description')
+
+        // To prove that, see that we actually have JS class Constructors to those elements:
+        console.log('Am I Object?', h1 instanceof Object)
+        console.log('Am I HTMLHeadingElement?', h1 instanceof HTMLHeadingElement)
+        console.log('--------------------------------------')
+
+        console.log('Am I Object?', desc instanceof Object)
+        console.log('Am I HTMLDivElement?', desc instanceof HTMLDivElement)
+
+        console.log('--------------------------------------')
+        // Every DOM element inherits from class HTMLElement
+        console.log('Am I HTMLElement?', h1 instanceof HTMLElement)
+        console.log('Am I HTMLElement?', desc instanceof HTMLElement)
+
+        // ----------
+
+        // Best way to see element on console:
+        console.dir(h1)
+        // https://developer.mozilla.org/en-US/docs/Web/API/console/dir_static
+        // will be sometimes better than:
+        console.log(h1)
+        // https://developer.mozilla.org/en-US/docs/Web/API/console/log_static
+
+        // because console.dir will give you full JS API to object, not only reference (preview) to (on) DOM !!!
+        // Check in the console and MDN docs for yourself.
+
+        // ----------
+
+        // Each of those elements you can edit, using its instance fields, and methods:
+
+        // If you uncomment this, text will be red, thanks to red-text CSS class
+        // h1.classList.add('red-text')
+
+        // @see: https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+
+
+        // If you uncomment this, div will have tooltip when you hover over it
+        // desc.setAttribute('title', 'Yes It's me😎')
+
+        // @see: https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute
+
+        // Use (F12) to check what is happening with those elements, after JS manipulation
+    </script>
+</body>
+</html>

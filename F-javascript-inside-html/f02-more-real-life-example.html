@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>f02 Order confirmation</title>
+</head>
+<body>
+  <main>
+      <p>
+          You placed an order: <strong>2024/06/10</strong>
+      </p>
+      <button onclick="handleConfirm()"> Confirm </button>
+  </main>
+  <script>
+      /**
+       * Inside <script> tags, we got JS world.
+       *
+       * You can define here elements with JS.
+       * You also can have access to those JS code, from within events (attributes starting with on* in HTML elements)
+       *
+       * As you can see. We can execute code below after button click.
+       * You can change event that triggers the alert.
+       *
+       * For example:
+       *    - you can change the event to "onmouseover", or "onmouseout"
+       *
+       * again, check the docs about it:
+       *
+       * https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes#event_handler_attributes
+       *
+       */
+
+      function handleConfirm() {
+          alert('Order 2024/06/10 confirmed !')
+      }
+
+
+  </script>
+</body>
+</html>

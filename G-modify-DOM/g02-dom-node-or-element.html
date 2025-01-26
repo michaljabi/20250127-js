@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>g02 DOM Node or Element</title>
+</head>
+<body>
+
+    <script>
+        /**
+         * This website body is empty, even if you do this:
+         * */
+
+        const headerOne = document.createElement('h1');
+        headerOne.innerText = 'Hello Text'
+
+        // This will not be rendered on the DOM.
+        // That is because, it is an Element and a proper Object, but We did not append it to <body> element yet !
+
+        // To do so, you need to uncomment line below
+        // document.body.appendChild(headerOne)
+
+        // You can also do it that way (if you want to add multiple Elements as next arguments)
+        // document.body.append(headerOne)
+
+        // From now on, when element is on the DOM it will become a part of the DOM Node Tree.
+
+        /**
+         *
+         * #TASK g02:
+         * 1. Confirm that one Element instance can be only once on the DOM tree
+         * 2. If you try to add it multiple times it will still be present only once
+         * 3. .... how do you think - Why?
+         *
+         * 4. What to do to make <h1>Hello Text</h1> appear twice on the DOM tree (using JavaScript)
+         * */
+    </script>
+</body>
+</html>

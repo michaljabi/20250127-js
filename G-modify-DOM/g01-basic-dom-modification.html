@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic DOM modification</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        /**
+         * Basically you can "paint" on DOM anything you want with JavaScript
+         *
+         * For instance, you can add List of <li> elements by pure JS:
+         * */
+
+         const animalList = ['parrot', 'cat', 'snake', 'dog'];
+         const ul = document.createElement('ul');
+
+
+         for(const animal of animalList) {
+             const li = document.createElement('li');
+             li.innerText = animal;
+             ul.appendChild(li)
+         }
+
+         const rootDiv = document.querySelector('div');
+         rootDiv.appendChild(ul);
+
+         /**
+          Helpful doc links:
+
+          https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/How_to_create_a_DOM_tree
+
+          https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector
+          https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+          https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
+          https://developer.mozilla.org/en-US/docs/Web/API/Element/append
+
+          * */
+    </script>
+</body>
+</html>

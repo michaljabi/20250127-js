@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04 fetch API</title>
+</head>
+<body>
+
+    <span></span>
+
+    <div style="margin-top: 20px">
+        <button data-btn-goto>go to github.com</button>
+    </div>
+
+    <script>
+      /**
+      * https://developer.mozilla.org/en-US/docs/Web/API/Location
+      * using location build-in object, you can read current URL displayed by the Browser.
+      *
+      * You also can manipulate location.href -> to move user to other browser - even not form the same origin!
+       * (in that way, not using the <a href=""></a> tag in HTML - you move to another link from JavaScript.
+      * */
+
+      const $span = document.querySelector('span');
+
+      $span.innerText = document.location
+
+      const $buttonGoto = document.querySelector('button[data-btn-goto]');
+
+      $buttonGoto.addEventListener('click', () => {
+          location.href = 'https://github.com'
+      })
+
+    </script>
+</body>
+</html>

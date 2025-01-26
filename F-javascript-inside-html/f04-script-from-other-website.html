@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>f04 Hello from UmbrellaJS</title>
+</head>
+<body>
+  <main>
+      <h1></h1>
+  </main>
+  <!-- script below is from different server so-called CDN (Content Delivery Network) -->
+  <script src="https://cdn.jsdelivr.net/npm/umbrellajs"></script>
+
+  <script>
+      // Now we can access here a things form same scope as UmbrellaJS
+      // https://umbrellajs.com/
+      // UmbrellaJS is a lib similar to jQuery or zepto.js
+
+      // After that line 12 been placed, you can access global u object for example:
+      console.log(u);
+
+      // This "u" is defined in scope of umbrella, that is why we can use it:
+      u('h1').text('Hello from UmbrellaJS')
+
+      // Notice that this is `u` - because creator of that lib - made a variable named u
+      // Because it is on the top of <script>, it will be accessed from other scripts.
+
+
+      /**
+       * #TASK f04:
+       *
+       * 1. Find in documentation of UmbrellaJS method .on()
+       *    - https://umbrellajs.com/documentation#on
+       * 2. Try to set up an event, on click
+       * 3. After clicking add "!" sign to <h1> </h1> tag
+       *    example:
+       *        - after one click on <h1> -> Hello from UmbrellaJS!
+       *        - after 2nd click -> Hello from UmbrellaJS!!
+       *        - and so on -> Hello from UmbrellaJS!!!
+       * */
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #clicker {
+            margin-top: 10px;
+            border: 1px solid black;
+            padding: 5px;
+            background-color: #4fb2ff;
+            cursor: pointer;
+        }
+        #clicker:hover {
+            background-color: #0e48ff;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="clicker"> Don't click me! </button>
+    </div>
+    <div>
+        <button data-btn> Don't click me 2! </button>
+    </div>
+    <script>
+        /**
+         * It is actually better to handle all of your code from JavaScript,
+         * not placing any of `on*` attributes (e.g. onclick)
+         *
+         * Here is how to do it with selecting element on the DOM:
+         *
+         * @see: https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector
+         * @see: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+         * */
+
+
+        document.querySelector('#clicker').addEventListener('click', () => {
+        	console.log('I said - do not click me !')
+        })
+
+        document.querySelector('[data-btn]').addEventListener('click', () => {
+            console.log('I said - do not click me 2!')
+        })
+
+        /*
+        *   Notice that you can do same thing, with more specific selectors,
+        *   and using constants, to increase code readability
+        *  */
+
+        const button1 =  document.querySelector('button#clicker');
+        button1.addEventListener('click', () => {
+            // nothing happens after click, but this button1 reference is for the same object as:
+            // document.querySelector('#clicker')
+        })
+
+        const button2 =  document.querySelector('button[data-btn]');
+        button2.addEventListener('click', () => {
+            // nothing happens after click, but this button1 reference is for the same object as:
+            // document.querySelector('[data-btn]')
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05 fetch API</title>
+</head>
+<body>
+    <script>
+      /*
+      * JavaScript allows you to connect with back-end service of other website.
+      *
+      * This is called: AJAX (Asynchronous JavaScript and XML)
+      * https://developer.mozilla.org/en-US/docs/Glossary/AJAX
+      *
+      * Modern Ajax request can be made by fetch API, resolved as a Promise.
+      * */
+
+      // Let see an example:
+
+      fetch('https://jsonplaceholder.typicode.com/todos/1')
+              .then(response => response.json())
+              .then(object => {
+                // Here we will print one TODO from the list:
+                console.log(object)
+                // This is an JS object - ready to work with:
+                console.log('title:', object.title, '| userId:', object.userId)
+              })
+
+      // open this address directly inside the browser:
+      // https://jsonplaceholder.typicode.com/todos/1
+      // Over there you will have JSON object (string).
+
+      // In our example in lines 22-27 "object" is a JavaScript Object already unwrapped from JSON string.
+      // That way by .then().then() -> sequence of so called Promises (part I in async code will show you more about this) you can download code from back-end and use it as a DATA FEED to your APP!
+    </script>
+</body>
+</html>

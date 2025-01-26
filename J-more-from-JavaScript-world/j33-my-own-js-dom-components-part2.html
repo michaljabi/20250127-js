@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .blue-text {
+            color: #599aff;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+
+
+    <script>
+        const $container = document.querySelector('.container');
+
+		function divBox(textContent = 'Hello World') {
+            const myDiv = document.createElement('div');
+            myDiv.textContent = textContent;
+            myDiv.className = 'blue-text';
+			return myDiv;
+        }
+
+
+        $container.appendChild(divBox());
+    </script>
+</body>
+</html>
