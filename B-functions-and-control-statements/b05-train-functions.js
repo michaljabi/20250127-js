@@ -4,9 +4,15 @@
 // when called with the argument 'Michael' will display the text: 'Hello Michael'
 // Consider the correct names for the function and its parameter
 function sayHello(name = 'Stranger') {
-    // console.log('Hello', name)
+    console.log('Hello ', name)
     console.log('Hello ' + name)
 }
 
 sayHello()
 sayHello('Michael')
+
+
+// 3 steps:
+// 1. make it work
+// 2. make it right
+// 3. make it fast

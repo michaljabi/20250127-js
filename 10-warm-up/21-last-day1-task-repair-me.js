@@ -16,23 +16,24 @@
 
 console.log('Program starts...');
 
-const MyHello = 'Hello';
+let MyHello = 'Hello';
 console.log(MyHello, 'World')
 
 MyHello = 'Serious';
 const help = "HelpMe out"
 console.log(help + ' right now!'); // HelpMe out right now!
 
-let do = true;
-const LARGE-number = 2048
+let isDone = true;
+const LARGE_NUMBER = 2048
 
-here, it supposes to be comment - that addNumber will return number
+// here, it supposes to be comment - that addNumber will return number
 function addNumbers(a, b) {
 	return a + b
 }
 
 let result;
-result = addNumbers(10, 20);
+const SCALE_FACTOR = 2.1
+result = addNumbers(10, 20 * SCALE_FACTOR);
 
 console.log('Result is:', result);
 
