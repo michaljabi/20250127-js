@@ -59,10 +59,28 @@ console.log(whatIfEmptyReturn())
 // Return keyword will STOP executing rest of the function, when it is called:
 // Things that you place after return statement, will be ignored, and are so-called "unreachable code"
 function showUnreachable() {
-	return 'Code below won\'t be executed';
+	return 'Code below won\'t be executed'
 	const x = 12 + 3;
 	const y = 900;
 	const sum = x + y;
 }
 
 console.log(showUnreachable())
+
+
+function sayHello(time = 0) {
+
+	if(time > 18) {
+
+		for(let x = 0;x <= 3; x++) {
+			console.log('!', time, x)
+		}
+		// console.log(x);
+		return 'goodbye';
+	}
+	return 'hello';
+}
+
+console.log(sayHello());
+
+console.log(sayHello(19));

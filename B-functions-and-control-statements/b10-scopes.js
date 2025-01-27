@@ -30,6 +30,8 @@ function mySuperCar () {
 		// Define new constant / variable or parameter
 		// you can use the same name, because naming of those things is unique inside the scope.
 		// In other scopes you can use the same names - however - this prevents you to access same named things from outer scip
+
+		console.log(model);
 		return 'Audi'
 	}
 
