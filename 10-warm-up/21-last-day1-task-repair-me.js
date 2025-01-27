@@ -16,14 +16,14 @@
 
 console.log('Program starts...');
 
-let MyHello = 'Hello';
-console.log(MyHello, 'World')
+let myHello = 'Hello';
+console.log(myHello, 'World')
 
-MyHello = 'Serious';
+myHello = 'Serious';
 const help = "HelpMe out"
 console.log(help + ' right now!'); // HelpMe out right now!
 
-let isDone = true;
+const isDone = true;
 const LARGE_NUMBER = 2048
 
 // here, it supposes to be comment - that addNumber will return number
@@ -31,9 +31,8 @@ function addNumbers(a, b) {
 	return a + b
 }
 
-let result;
 const SCALE_FACTOR = 2.1
-result = addNumbers(10, 20 * SCALE_FACTOR);
+const result = addNumbers(10, 20 * SCALE_FACTOR);
 
 console.log('Result is:', result);
 
