@@ -20,12 +20,28 @@ function sayHello() {
 
 // Call:
 sayHello()
+sayHello()
+sayHello()
+sayHello()
 
 
 // # 1 Task:
 // How To Quickly Repeat These Entries 4 Times On The Screen:
 // we want to see 4 boxes one below the other
+function showMeTheBox(text = 'in the box') {
+	console.log('  ____________')
+	console.log('|  ', text, '  |')
+	console.log('  ------------')
+}
 
-console.log('  ____________')
-console.log('|  in the box  |')
-console.log('  ------------')
+showMeTheBox('changed')
+showMeTheBox()
+showMeTheBox('hello')
+showMeTheBox()
+
+// this is ok, but not expected.
+for(let x = 0; x <= 3; x++) {
+	console.log('  ____________')
+	console.log('|  in the box  |')
+	console.log('  ------------')
+}
