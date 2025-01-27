@@ -10,13 +10,14 @@ Fix errors in code, exmplain them
 
 */
 
-const hello = "Hello";
-const inJS = "in JavaScript";
+const hello = "Hel\nlo\tsapatate";
+const inJS = `in 
+JavaScript`;
 
 // 2.2 show `Hello in JavaScript` on the screen
-
+console.log(hello, inJS)
 // 2.1 fix this error to see
 
-let inJS = `sample (${10 + 10 + 2}) number`;
+let sampleNumber = `sample (${10 + 10 + 2}) number`;
 
-console.log(inJS);
+console.log(sampleNumber);
