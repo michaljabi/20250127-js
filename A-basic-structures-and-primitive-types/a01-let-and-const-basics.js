@@ -42,7 +42,16 @@
 
  */
 
+/* something 
+
+
+else
+
+*/
+
 // This is a variable:
+sample 
+
 let myVar;
 // You SHOULD use the "let" keyword to declare a variable
 // You can check its value, like that:

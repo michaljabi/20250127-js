@@ -1,5 +1,0 @@
-// task #0 | SPOT the error
-
-const hello = 'Hello in JS training
-
-console.log(hello);
