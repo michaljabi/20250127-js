@@ -18,36 +18,60 @@
 */
 
 // Declaration:
-function sumTwoNumbers(a, b) {
-	return a + b
+function sumTwoNumbers(a, b, c = 0) {
+	return a + b + c
+}
+
+// Declaration:
+function sumThreeNumbers(a, b, c = 0) {
+	return a + b + c
 }
 
 // Call and assignment of the returned value from function:
 const result = sumTwoNumbers(10, 20)
-
-
 // #1 Task:
 // Show the addition result of 10 + 20 on the screen
-
+// solution 1.1
+console.log(10 + 20);
+// solution 1.2
+console.log(result)
+// solution 1.3
+console.log(sumTwoNumbers(10, 20))
 
 // #2 Task:
 // Count how many is 30 + 560
-
+console.log(30 + 560);
+const result2 = sumTwoNumbers(30, 560);
+console.log(result2);
+console.log(sumTwoNumbers(30, 560))
 
 // #3 Task:
 // What if we want to count 450 + 200 + 100?
-
-
+// solution 3.1 (add 3rd parameter - we should rename function!)
+console.log(sumTwoNumbers(450, 200, 100))
+// solution 3.2:
+const partialSum = sumTwoNumbers(450, 200);
+const finalResult = sumTwoNumbers(partialSum, 100);
+console.log(finalResult);
+// solution 3.3:
+console.log(sumTwoNumbers(sumTwoNumbers(450, 200), 100))
 
 /* ---------------------- */
 // Functions after 2015 may have default parameters:
 
 function greetings(user = 'Admin') {
 	console.log('Hello', user)
+	//return 'Hello ' + user
 }
+
+greetings()
 
 // #4 Task:
 // try to call greetings with arguments and no argument, what will happen?
+// console.log(greetings())
+greetings()
+greetings('Michał')
+greetings('Kasia')
 
 
 // #5 Task:
