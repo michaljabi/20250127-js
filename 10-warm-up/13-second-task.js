@@ -1,4 +1,4 @@
-// @ts-nocheck
+
 /*
 
 Your 2nd task:
@@ -9,6 +9,65 @@ Try to run this code using
 Fix errors in code, exmplain them
 
 */
+
+console.log(Math.PI)
+
+console.log(10 / 0);
+
+let x;
+console.log(x);
+x = 10;
+console.log(x);
+x = x + 200;
+console.log(x);
+x += 90;
+console.log(x)
+x++;
+console.log(x)
+
+
+const h = 1.2;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+console.log(h);
+// h = 0.2
 
 const hello = "Hel\nlo\tsapatate";
 const inJS = `in 
