@@ -10,6 +10,7 @@
  * See how console.log behaves and shows from line 28
  *
  * */
+// global.myColor = 'green';
 
 const myColor = 'red';
 
@@ -17,7 +18,7 @@ function inception() {
 	const myColor = 'cristal';
 
 	function secondDream() {
-		const myColor = 'sapphire';
+		//const myColor = 'sapphire';
 
 		function thirdDream() {
 			const myColor = 'emerald';
