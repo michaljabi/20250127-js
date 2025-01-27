@@ -1,3 +1,5 @@
+
+const myString = 'sample sentence'
 // STRINGS
 // ----------------------------------------------------------------------------------------------
 // Common operations on strings:
@@ -38,6 +40,7 @@ console.log ('remainder from division', 80 % 3);
 
 console.log ('Order of operations :)', 2 + 2 * 2);
 
+const myNumber = 100.28351;
 // Examples, built-in methods:
 console.log('>> NUMBERS:');
 console.log(myNumber.toFixed(3));
@@ -59,6 +62,7 @@ console.log('Result is:', 10 > 220);
 console.log('Result is:', 10 <= 220);
 console.log('Result is:', 10 + 300 < 220);
 
+const myBoolean = true;
 // Example built-in method:
 console.log('>> BOOLEANS:');
 console.log(myBoolean.toString());

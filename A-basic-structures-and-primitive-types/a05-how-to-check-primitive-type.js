@@ -30,7 +30,18 @@ console.log(typeof mySecretVar5) // Symbol
 console.log(typeof myUndefined) // undefined
 
 // A special simple type that cannot be previewed with the "typeof" operator
-console.log(typeof mySecretVar6) // null - NOTE to typeof in this case it shows "object"
+console.log(typeof mySecretVar6)
+console.log(mySecretVar6 == null)
+console.log(mySecretVar6 === null)
+
+console.log(1 == '1')
+console.log(1 === '1')
+console.log(1 === 1)
+console.log('1' === '1')
+
+// Programmer can cast from one type to another:
+console.log(Number('20039'))
+console.log(String(20039))
 
 // null in this case (as object) is obviously a mistake - bug. Which, due to backward compatibility, stayed in JS.
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof#typeof_null
