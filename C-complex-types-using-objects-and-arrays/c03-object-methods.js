@@ -23,8 +23,10 @@ const cat = {
 
 // #1 Task:
 // Show the voice method output on the console
-
-
+console.log(cat.voice())
+console.log(cat.eyes)
+console.log(cat.alwaysLandsOn4Feet)
+console.log(cat.whiskers)
 
 
 // More examples:
@@ -47,7 +49,13 @@ console.log(myUser['name'])
 // Assign a new object to a constant - check and prove that:
 // a) You cannot have several fields with the same name in an object
 // b) If such a situation occurs then "the value of the last field wins"
+const myObject = {
+	// age: 'last one wins', // dot do this :)
+	age: 12,
+	age: 230,
+}
 
+console.log(myObject)
 
 
 // Except dynamic saving, you can "get" to all fields of the object - thanks to the for ... in loop
@@ -68,7 +76,7 @@ console.log(tree.branch.leaf)
 
 // # 3 Task:
 // Show the isRoot value in the tree object on the console:
-
+console.log(tree.branch.isRoot);
 
 /**
 * Unlike primitives.
@@ -78,6 +86,21 @@ console.log(tree.branch.leaf)
 * If we assign another variable / constant and compared to the previous one,
 * we will NOT create an independent copy of the object (clone) - but only 2 references leading to the same place in the memory.
 * */
+
+let numeric = 80;
+let numeric2 = numeric;
+
+console.log(numeric === numeric2);
+
+numeric++;
+console.log(numeric);
+
+console.log(numeric2);
+
+console.log(numeric === numeric2);
+
+// CONCLUSION: Primitive types in JS are passed by value!
+
 
 const house = {
 	name: 'MyHome'
@@ -94,3 +117,11 @@ console.log(house === otherHouse);
 otherHouse.name = 'CHANGED NAME of my home 🏢'
 
 console.log(house);
+
+console.log(house === otherHouse);
+
+
+// CONCLUSION: Object types in JS are passed by references.
+// so there is only ONE object here in memory, but 2 references to it:
+// house,
+// otherHouse
