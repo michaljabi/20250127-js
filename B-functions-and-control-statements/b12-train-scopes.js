@@ -10,16 +10,29 @@
 const helloWorld = "hello World!";
 
 
-function h() {
+function printFirstAndLast() {
     // console.log(helloWorld)
     // console.log(helloWorld.charAt(0))
     // console.log(helloWorld.length)
     // console.log(helloWorld.length - 1)
     // console.log(helloWorld.charAt(helloWorld.length -1))
     console.log(helloWorld.charAt(0) + helloWorld.charAt(helloWorld.length - 1))
+    console.log(helloWorld[0] + helloWorld[helloWorld.length - 1])
+    // solution 2 (error prone):
+    console.log(helloWorld[0])
+    console.log(helloWorld[helloWorld.length - 1])
+    // because of this:
+    console.log(helloWorld.charAt(100))
+    console.log(helloWorld[100])
+
+    // solution 3 (also error prone 😢):
+    console.log(helloWorld.at(0) + helloWorld.at(-1))
+
+    // solution 4 (another cool solution):
+    console.log(helloWorld.charAt(0) + helloWorld.slice(-1))
 }
 
-h();
+printFirstAndLast();
 
 // # 1 Task:
 // Prepare the function then call it
