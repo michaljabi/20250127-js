@@ -54,6 +54,12 @@ console.log(numbers[numbers.length - 1]);
 console.log(numbers.at(0));
 console.log(numbers.at(-1));
 
+console.log(numbers);
+
+// console.log(numbers.toR)
+console.log(numbers.toReversed()[0]);
+console.log(numbers);
+
 console.log([].at(0));
 console.log([].at(-1));
 
