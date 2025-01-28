@@ -12,17 +12,29 @@
  *
  * */
 
-// Array example:
-const mutableArray = [ 'a', 'b', 'c', 'd' ];
+let sentence = 'Hello World of Tanks';
+// sentence += '!'
 
+// Count number of words in this sentence
+const words = sentence.split(' ')
+console.log(words);
+console.log(words.length);
+
+// Array example:
+const mutableArray = [ 'a', 'b', 'c', 'd', 90, {} ];
+
+mutableArray.push('Z')
+mutableArray.push('a')
 // Check the length of the array
 console.log(mutableArray.length);
 
 // Read an array element at a specific index:
-console.log(mutableArray[2]);
+console.log(mutableArray[3]);
 
 // Modify an array element at a specific index:
 mutableArray[2] = 'x'
+
+console.log(mutableArray);
 
 // This is a collection that can be iterated.
 // Both with a for loop
@@ -40,7 +52,7 @@ mutableArray.forEach(element => {
 })
 
 // Methods mutating an array (changing its elements):
-// More ? check: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype
+// More ? check: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 
 // add element (s) to the end:
 mutableArray.push( 'e', 'f', 'g' );

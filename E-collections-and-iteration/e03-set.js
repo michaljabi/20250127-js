@@ -13,6 +13,8 @@
 
   const mySetFromArray = new Set( [ 1, 1, 2, 3, 3, 4, 6, 8, 10, 190, 190 ] );
 
+console.log(mySetFromArray)
+
   let iterator = mySetFromArray.values();
   console.log( iterator.next() );
   iterator = mySetFromArray.values();
