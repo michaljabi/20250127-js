@@ -12,7 +12,8 @@ const shoppingCartItem = {
 	tax: 1.23
 }
 
-const grossPrice = shoppingCartItem.price * shoppingCartItem.tax;
+// const grossPrice = shoppingCartItem.price * shoppingCartItem.tax;
+const grossPrice = countGrossPrice(shoppingCartItem);
 console.log(grossPrice);
 
 /* # 2 Task:
@@ -32,11 +33,17 @@ const shoppingCartItem2 = {
 	tax: 1.23
 }
 
-const grossPrice2 = shoppingCartItem2.price * shoppingCartItem2.tax;
+// const grossPrice2 = shoppingCartItem2.price * shoppingCartItem2.tax;
+const grossPrice2 = countGrossPrice(shoppingCartItem2);
 console.log(grossPrice2);
 
-const cartTotalPrice = grossPrice + grossPrice2;
-console.log(grossPrice + grossPrice2);
+function countGrossPrice(item) {
+	return item.price * item.tax;
+}
+
+// const cartTotalPrice = grossPrice + grossPrice2;
+const cartTotalPrice = countGrossPrice(shoppingCartItem) + countGrossPrice(shoppingCartItem2);
+console.log(cartTotalPrice);
 
 // # 3 Show that initializing two new empty objects after comparing === will give us false.
 // Even when they got the same properties and values (!!!)
@@ -53,3 +60,30 @@ console.log({} === {});
 // another:
 const isEqual = {} === {};
 console.log(isEqual)
+
+
+const shoppingCart = [
+	{
+		name: 'Komputer',
+		price: 2000,
+		tax: 1.23
+	},
+	{
+		name: 'Smatphone',
+		price: 3000,
+		tax: 1.23
+	}
+]
+
+console.log(shoppingCart[0])
+console.log(shoppingCart[1])
+
+function totalGrossPriceOfAllItems(arrayOfItem) {
+	let grossPrice = 0;
+	for(const item of arrayOfItem) {
+		grossPrice += item.price * item.tax;
+	}
+	return grossPrice;
+}
+
+console.log(totalGrossPriceOfAllItems(shoppingCart))
