@@ -4,10 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My first website</title>
+    <style>
+        .myheader {
+            background-color: blueviolet;
+        }
+        
+        .whiteColor {
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <h1>Change me...</h1>
-    <h1>Change me...</h1>
+    <h1 class="myheader">Change me...</h1>
+    <h1 id="my-heading1" title="tooltip" data-anything="test3">Change me...</h1>
+    <h1 class="myheader whiteColor">Another one</h1>
     <script>
         // Task after the brake:
         // 1. use document.querySelector + 
@@ -19,9 +29,16 @@
         // https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector
         // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText
 
-        const h1 = document.querySelector('h1');
+        // # - id
+        // . - class
+        // [] - attribute
+        // const h1 = document.querySelector('#my-heading1');
+        // const h1 = document.querySelector('[title]');
+        // const h1 = document.querySelector('[data-anything="test3"]');
+        const h1 = document.querySelector('.myheader');
 
-        if(h1 !== null) {
+        // if(h1 !== null) {
+        if(h1) {
             // this will show me helful repesentation of the reference to object
             console.log(h1)
             // this will show me acutal object:

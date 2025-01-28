@@ -2,14 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>f02 Order confirmation</title>
+    <meta name="description" content="Quokka runs your JavaScript and TypeScript code and displays results inline in VS Code, WebStorm, and Sublime Text.">
+    <title>HERE IS THE TITLE</title>
 </head>
 <body>
-  <main>
-      <p>
-          You placed an order: <strong>2024/06/10</strong>
+  <h1>Hello form the Server ?!</h1>  
+  <h2>Hello form the Server ?!</h2>  
+  <h3>Hello form the Server ?!</h3>  
+  <h4>Hello form the Server ?!</h4>
+
+  <main style="background-color: aqua;">
+      <p title="this is actually a tooltip in HTML">
+          You placed an order: <strong style="background-color: lightpink;">2024/06/10</strong>
       </p>
       <button onclick="handleConfirm()"> Confirm </button>
+      <div>
+        <button onclick="handleConfirm()"> Confirm </button>
+      </div>
+
+      <div>
+        hello <span style="font-size: 67px;">world</span>
+      </div>
   </main>
   <script>
       /**
@@ -31,9 +44,31 @@
        */
 
       function handleConfirm() {
-          alert('Order 2024/06/10 confirmed !')
-      }
+          const result = confirm('Order 2024/06/10 confirmed')
 
+          if(result) {
+            console.log('Ship the order...')
+          } else {
+            console.warn('Order cannot be shipped')
+          }
+
+    }
+        
+     document.querySelector('h1').setAttribute('title', 'another tooltip 🧑‍🎄')
+     
+
+    const newButton = document.createElement('button');
+
+    newButton.style.backgroundColor = '#00ff00'
+    newButton.style.padding = '40px'
+    newButton.style.margin = '40px'
+    newButton.style.fontSize = '3rem'
+    newButton.textContent = 'Hello'
+    newButton.addEventListener('click', () => {
+      alert('somebody clicked on me')
+    })
+
+    document.body.append(newButton)
 
   </script>
 </body>
