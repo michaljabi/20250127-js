@@ -9,6 +9,11 @@ const user = {
 	name: 'Marek'
 };
 
+// const in objects means, you cannot make a NEW assigment,
+// yes, const on the primitives make them immutable ! (because primitives ARE immutable in JS)
+// but objects ARE NOT immutable - you can always change them internally!
+// user = {};
+
 console.log(user);
 
 // Access to property inside object:
