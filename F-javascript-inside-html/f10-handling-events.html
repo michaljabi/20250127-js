@@ -35,10 +35,23 @@
          * @see: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
          * */
 
+        const btn = document.querySelector('#clicker');
 
-        document.querySelector('#clicker').addEventListener('click', () => {
+        btn.addEventListener('click', () => {
         	console.log('I said - do not click me !')
         })
+
+        const groupOfTexts = ['Hello', 'Goodbye', 'Ok', 'Hello again']
+        let idx = 0;
+        const intId = setInterval(() => {
+            btn.textContent = groupOfTexts[idx];
+            idx++;
+            if(idx === groupOfTexts.length) {
+                idx = 0;
+                clearInterval(intId);
+            }
+            console.log('im running', idx)
+        }, 2000)
 
         document.querySelector('[data-btn]').addEventListener('click', () => {
             console.log('I said - do not click me 2!')
