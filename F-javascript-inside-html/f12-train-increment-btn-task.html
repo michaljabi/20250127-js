@@ -35,13 +35,23 @@
          //const yourName = document.querySelector('button')
          //const yourName = document.querySelector('button[data-counter]')
          const btn = document.querySelector('[data-counter]')
+         // console.log(window)
 
          if(btn) {
             //console.dir(btn)
-            let n = 1;
+            
+            const value = localStorage.getItem('visit-counter');
+            // console.log(value);
+
+            let n = Number(value);
+            if(n === 0 || Number.isNaN(n)) { // NaN === NaN will not WORK !!!
+                n = 1;
+            }
+            btn.textContent = n;
             btn.addEventListener('click', () => {
                 btn.textContent = ++n;
                 //console.log('I got the button...')
+                localStorage.setItem('visit-counter', n)
             })
          }
 
