@@ -32,6 +32,20 @@
          *   Place whole logic to achieve this effect inside this script.
          * */
 
+         //const yourName = document.querySelector('button')
+         //const yourName = document.querySelector('button[data-counter]')
+         const btn = document.querySelector('[data-counter]')
+
+         if(btn) {
+            //console.dir(btn)
+            let n = 1;
+            btn.addEventListener('click', () => {
+                btn.textContent = ++n;
+                //console.log('I got the button...')
+            })
+         }
+
+        //console.log(yourName);
     </script>
 </body>
 </html>
