@@ -9,12 +9,16 @@
     <script>
         // Confirmation that we do not have access to the defined value in module.js.
         // Because we use type="module".
-        console.log(privateVariable)
+        // console.log(privateVariable)
     </script>
     <script type="module">
         import { publicVariable } from './moduleB.js';
         // Confirmation that we have access here, that is a right way to use modules.
         // With import and export syntax.
+		console.log('That will work:', publicVariable)
+    </script>
+    <script type="module">
+        import { publicVariable } from './moduleB.js';
 		console.log('That will work:', publicVariable)
     </script>
 </body>

@@ -14,7 +14,16 @@
   <!-- script below is inside other file -->
   <script src="./f03-script-from-other-file.js"></script>
 
+  <script type="module">
+     function sayHello() {
+        console.log('Hello')
+     }
+     const x = 200;
+  </script>
   <script>
+      // const testMe = 'ok'  
+      sayHello()
+      console.log(x)  
       // you can have more than one script on the website.
       // IF the scripts aren't --> type="module" (!) They will share same scope !!!
 
