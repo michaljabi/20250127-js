@@ -11,17 +11,34 @@ Arrow functions, apart from the abbreviated text, add a few more things:
   this value will be returned as the result of the function - without need to use the "return" keyword
 
 # Tasks
-1. Compare and check the actions of "arrow functions" by calling these functions and displaying their values on the console
+1. Compare and check the actions of "arrow functions" by calling these 
+functions and displaying their values on the console
 
 */
 
 // ES6 + news (after 2015):
 // we get Arrow functions:
+
+// console.log(num);
+
+const num = 1;
+
+console.log(num);
+
+// console.log(newFunc('Michał'))
+
 const newFunc = ( name ) => `Hello ${name}!`;
 const newFunc2 = name => `Hello ${name}!`;
 const newFunc3 = ( name ) => {
     return `Hello ${name}!`;
 };
+
+console.log(newFunc('Michał'))
+console.log(newFunc2('Michał'))
+console.log(newFunc3('Michał'))
+
+// Call those functions from above to see how they works:
+
 
 // Reminder:
 // A function can return another function:
@@ -32,7 +49,9 @@ function hello() {
 const innerFn = hello();
 // # 2 Task:
 // How do I get the "World" result?
+console.log(innerFn()) 
 
+console.log(hello()()) 
 
 /*
 

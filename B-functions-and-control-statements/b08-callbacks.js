@@ -15,11 +15,34 @@ function onClick() {
 	console.log('Button clicked')
 }
 
+onClick()
+onClick()
+onClick()
+
+
 function listenToTheClick(fireLogic) {
+	fireLogic();
+	fireLogic();
 	fireLogic();
 }
 
-listenToTheClick(onClick);
+listenToTheClick(() => {
+	console.log('hello!');
+});
+
+
+
+
+
+
+setTimeout(() => {
+	console.log('Happy New 2025 !')
+}, 5000);
+
+console.log('This is still being shown...')
+
+
+
 
 
 // Let's see it in another example:
