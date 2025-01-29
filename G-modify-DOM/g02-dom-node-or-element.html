@@ -14,6 +14,9 @@
         const headerOne = document.createElement('h1');
         headerOne.innerText = 'Hello Text'
 
+        const headerTwo = document.createElement('h1');
+        headerTwo.innerText = 'Hello Text2'
+
         // This will not be rendered on the DOM.
         // That is because, it is an Element and a proper Object, but We did not append it to <body> element yet !
 
@@ -21,7 +24,7 @@
         // document.body.appendChild(headerOne)
 
         // You can also do it that way (if you want to add multiple Elements as next arguments)
-        // document.body.append(headerOne)
+        document.body.append(headerOne, '---', headerTwo)
 
         // From now on, when element is on the DOM it will become a part of the DOM Node Tree.
 
