@@ -39,8 +39,8 @@
 
          if(btn) {
             //console.dir(btn)
-            
-            const value = localStorage.getItem('visit-counter');
+            const VISIT_COUNTER = 'visit-counter'
+            const value = localStorage.getItem(VISIT_COUNTER);
             // console.log(value);
 
             let n = Number(value);
@@ -51,7 +51,7 @@
             btn.addEventListener('click', () => {
                 btn.textContent = ++n;
                 //console.log('I got the button...')
-                localStorage.setItem('visit-counter', n)
+                localStorage.setItem(VISIT_COUNTER, n)
             })
          }
 
