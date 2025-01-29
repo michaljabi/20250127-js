@@ -7,19 +7,25 @@
             🚀                                                                               (____/            
 */
 // #1 Task
-// Show numbers from 1 to 10 on the console, one below the other:
+// Show numbers from 1 to 4 on the console, one below the other:
 // 1
 // 2
 // 3
 // 4
+const collection = [];
 for (let x = 1; x <= 10; x++) {
-    console.log(x)
+    if(x <= 4) {
+        console.log(x)
+    }
+    collection.push(x);
 }
 
 
 // #2 Task
 // Show a sequence of numbers 1 to 10 next to each other on the console:
 // 1 2 3 4 5 6 7 8 9 10
+console.log(collection.join(' '));
+/*
 let collector = '';
 const collection = [];
 for (let x = 1; x <= 10; x++) {
@@ -28,6 +34,8 @@ for (let x = 1; x <= 10; x++) {
     collection.push(x);
 }
 console.log(collector.trim())
+*/
+
 
 // DO NOT MIX THE TYPES !
 //collection.push('888');
