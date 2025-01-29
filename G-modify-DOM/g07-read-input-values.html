@@ -19,13 +19,17 @@
 </head>
 <body>
     <div id="root">
-        <label>
-            Name:
-            <input type="text" name="myName">
-        </label>
+        <form>
+        <label for="name2">Name:</label> 
+
+        <div style="margin-top: 60px;">
+
+        </div>
+        <textarea row="5" id="name2" type="text" name="myName"></textarea>
+    
         <label>
             Age:
-            <input type="number" name="age">
+            <input type="number" name="age" value="33" min="0">
         </label>
         <div>
             <ul>
@@ -33,29 +37,34 @@
                 <li>You typed age: <span data-value="age"></span></li>
             </ul>
         </div>
+        <button type="submit">Send form</button>
+        </form>
     </div>
-
+    
     <script>
-        const myNameInput = document.querySelector('input[name="myName"]');
-        const myNameOutput = document.querySelector('span[data-value="myName"]');
+        const myNameInput = document.querySelector('[name="myName"]');
+        //const myNameOutput = document.querySelector('span[data-value="myName"]');
 
         myNameInput.addEventListener('input', (event) => {
             console.log(event.target.value)
-            myNameOutput.innerText = event.target.value;
-            // same as:
-            // myNameOutput.innerText = myNameInput.value;
+            // console.log(myNameInput.value)
+            //console.log(event)
+            // yNameOutput.innerText = event.target.value;
         })
 
-        const ageInput = document.querySelector('input[name="age"]');
-        const ageOutput = document.querySelector('span[data-value="age"]');
 
-        ageInput.addEventListener('input', (event) => {
-            console.log(event.target.value, typeof event.target.value)
-            console.log(event.target.valueAsNumber, typeof event.target.valueAsNumber)
-            ageOutput.innerText = event.target.value;
-            // same as:
-            // ageOutput.innerText = ageInput.value;
+        // 1. Make a new `input` from JS,  <input>
+        // 2. and attach to body
+        // 3. listen to this new input (input event) and console.log the value.
+
+        const myInput = document.createElement('input');
+
+        myInput.addEventListener('input', (e) => {
+            // console.log(myInput.value);
+            console.log(e.target.value);
         })
+
+        document.body.append(myInput)
     </script>
 </body>
 </html>
