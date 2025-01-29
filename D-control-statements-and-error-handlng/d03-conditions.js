@@ -26,21 +26,55 @@ if(value > 200) {
 	console.log('Value is more than 200')
 }
 
+console.log('HELLO'.toLowerCase())
+console.log('hello'.toUpperCase())
+
+console.log('code', 'Code')
+
+const capitalize = (word = '') => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+
+console.log(capitalize('HELLO'))
+console.log(capitalize('hELLO'))
+console.log(capitalize('hello'))
+console.log(capitalize('h'))
+console.log(capitalize(''))
+
 const word = 'Hello';
-if(word === 'hello') {
+if(word.toLowerCase() === 'hello') {
 	console.log('This will not fire...');
 }
 
 /*
 		The condition if...else if
 */
-let numericCondition = 0;
+let numericCondition = 1;
 
-if(numericCondition === 1) {
+// || - OR
+// && - AND
+// ! - NOT
+
+console.log( 11 || 200  )
+console.log( 200 || 200 )
+console.log( false || null || undefined || 0 || 200 )
+
+console.log( false && 200 )
+console.log( false && null && 200 )
+console.log( false && null && 200 )
+
+console.log( 2 && 3 && 200 )
+
+console.log( !true )
+console.log( !false )
+console.log( !'' )
+console.log( !'heee' )
+console.log( !11 )
+
+if(numericCondition === 1 || numericCondition === 22) {
 	console.log('if !')
 } else if (numericCondition){
 	console.log('else if !')
 } else {
+	console.log('else !?')
 	console.log('else !?')
 }
 
@@ -49,21 +83,23 @@ if(numericCondition === 1) {
 */
 const x = 100;
 const higherThen10 = x > 10;
-const hello = higherThen10 ? 'hello' : 'goodbye';
+const helloValue = higherThen10 ? 'hello' : 'goodbye';
 
-
+console.log(helloValue);
 /*
 		Switch
 */
-switch(hello) {
+switch(helloValue) {
 	case 'hello':
+	case 'hello2':
 		console.log('logic for hello...');
 		break;
 	case 'goodbye':
 		console.log('logic for goodbye...');
 		break;
 	default:
-		console.log('logic for unknown value')
+		throw new Error('I cannot handle this case')
+		// console.log('logic for unknown value')
 }
 
 

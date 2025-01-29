@@ -43,10 +43,11 @@
             const value = localStorage.getItem(VISIT_COUNTER);
             // console.log(value);
 
-            let n = Number(value);
-            if(n === 0 || Number.isNaN(n)) { // NaN === NaN will not WORK !!!
-                n = 1;
-            }
+            // make it even better with OR logic.
+            let n = Number(value) || 1;
+            // if(n === 0 || Number.isNaN(n)) { // NaN === NaN will not WORK !!!
+            //     n = 1;
+            // }
             btn.textContent = n;
             btn.addEventListener('click', () => {
                 btn.textContent = ++n;

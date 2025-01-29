@@ -10,6 +10,42 @@
  * https://developer.mozilla.org/en-US/docs/Glossary/Falsy
  * */
 
+console.log(Boolean(0))
+console.log(Boolean(NaN))
+console.log(Boolean(-1))
+console.log(Boolean(1))
+console.log(Boolean(2))
+console.log(Boolean(3))
+
+console.log(Boolean({}))
+console.log(Boolean([]))
+
+console.log(Boolean([]))
+
+console.log(Infinity === Infinity);
+// THAT WONT WORK:
+console.log(NaN === NaN);
+
+// not so good but works:
+console.log(isNaN(NaN));
+console.log(isNaN());
+console.log(isNaN(undefined));
+
+// 2015 Bulletproff battlefield tested solution
+console.log(Number.isNaN(NaN));
+console.log(Number.isNaN());
+console.log(Number.isNaN(undefined));
+console.log(Number.isNaN(null));
+
+const v = '3';
+console.log(Number(v))
+const n = Number(v) || 1;
+console.log(n);
+
+if(Boolean(0)) {
+	console.log('I am working !')
+}
+
 if(0) {
 	console.log('I am working !')
 }
